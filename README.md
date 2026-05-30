@@ -39,39 +39,31 @@ to enterprise AI deployment with governance constraints — e.g. adapting a shar
 base model for multiple finance or clinical NLP tasks without storing full model
 copies for each.
 
-## Quick start
-
-```bash
-git clone https://github.com/sanikadhanwate/LLM-Parameter-Efficient-Fine-Tuning-for-Question-Answering.git
-cd LLM-Parameter-Efficient-Fine-Tuning-for-Question-Answering
-conda create -n qa311 python=3.11
-conda activate qa311
-pip install -r requirements.txt
-
-# Download SQuAD v2 locally
-mkdir -p raw_data
-curl -L https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json -o raw_data/train-v2.0.json
-curl -L https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json   -o raw_data/dev-v2.0.json
-
-python -m data.prepare_data   # verify data loads
-python -m src.train            # fine-tune (~50 min CPU, 3 epochs)
-python -m src.evaluate         # get EM + F1
-python -m src.inference        # test on custom text
-```
 
 ## Project structure
 ├── requirements.txt
+
 ├── raw_data/              # SQuAD v2 JSON files (not committed)
+
 ├── data/
+
 │   └── prepare_data.py    # local JSON loader + tokenizer
+
 ├── src/
 │   ├── config.py          # all hyperparameters
+
 │   ├── model.py           # DistilBERT + LoRA adapter
+
 │   ├── train.py           # training loop
+
 │   ├── evaluate.py        # EM + F1 scoring
+
 │   └── inference.py       # run predictions on custom text
+
 └── results/
+
 ├── metrics.json        # evaluation results
+
 └── training_history.json
 
 ## Tech stack
