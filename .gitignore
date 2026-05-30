@@ -1,0 +1,9 @@
+raw_data/
+results/peft-qa-model/
+venv/
+__pycache__/
+*.pyc
+*.pt
+*.bin
+.DS_Store
+.env
