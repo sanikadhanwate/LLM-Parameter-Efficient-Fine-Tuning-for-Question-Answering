@@ -42,6 +42,7 @@ copies for each.
 
 ## Project structure
 ├── requirements.txt 
+|
 ├── raw_data/              # SQuAD v2 JSON files (not committed) 
 ├── data/
 │   └── prepare_data.py    # local JSON loader + tokenizer
