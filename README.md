@@ -41,18 +41,30 @@ copies for each.
 
 
 ## Project structure
-|requirements.txt 
-|raw_data/              # SQuAD v2 JSON files (not committed) 
+| requirements.txt 
+
+| raw_data/              # SQuAD v2 JSON files
+
 | data/
+
 |   └── prepare_data.py    # local JSON loader + tokenizer
-├── src/
-│   ├── config.py          # all hyperparameters
-│   ├── model.py           # DistilBERT + LoRA adapter
-│   ├── train.py           # training loop
-│   ├── evaluate.py        # EM + F1 scoring
-│   └── inference.py       # run predictions on custom text
+
+| src/
+
+|   ├── config.py          # all hyperparameters
+
+|   ├── model.py           # DistilBERT + LoRA adapter
+
+|   ├── train.py           # training loop
+
+|   ├── evaluate.py        # EM + F1 scoring
+
+|   └── inference.py       # run predictions on custom text
+
 └── results/
+
 ├── metrics.json        # evaluation results
+
 └── training_history.json
 
 ## Tech stack
